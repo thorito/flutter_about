@@ -36,6 +36,7 @@ void showMarkdownPage({
   String? applicationName,
   Widget? applicationIcon,
   required String filename,
+  String? contentMarkdown,
   bool? useMustache,
   Map<String, String>? mustacheValues,
   MarkdownTapHandler? tapHandler,
@@ -64,6 +65,7 @@ void showMarkdownPage({
     scaffoldBuilder: scaffoldBuilder,
     applicationName: applicationName,
     filename: filename,
+    contentMarkdown: contentMarkdown,
     useMustache: useMustache,
     mustacheValues: mustacheValues,
     tapHandler: tapHandler,
@@ -119,6 +121,7 @@ class MarkdownTemplate extends StatefulWidget {
     bool? useMustache,
     this.mustacheValues,
     required this.filename,
+    this.contentMarkdown,
     MarkdownTapHandler? tapHandler,
     this.styleSheet,
     this.imageDirectory,
@@ -145,6 +148,9 @@ class MarkdownTemplate extends StatefulWidget {
 
   /// The markdown asset file to load
   final String filename;
+
+  /// Content of the markdown file
+  final String? contentMarkdown;
 
   /// Whether to replace {{ }} strings with [mustacheValues]
   final bool useMustache;
@@ -218,6 +224,14 @@ class MarkdownTemplate extends StatefulWidget {
 }
 
 class MarkdownTemplateState extends State<MarkdownTemplate> {
+  String? _md;
+
+  @override
+  void initState() {
+    _md = widget.contentMarkdown;
+    super.initState();
+  }
+
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -225,8 +239,6 @@ class MarkdownTemplateState extends State<MarkdownTemplate> {
       _initMarkdown(context);
     }
   }
-
-  String? _md;
 
   Future<void> _initMarkdown(BuildContext context) async {
     if (_md != null) {
@@ -347,6 +359,7 @@ class MarkdownPage extends StatefulWidget {
     bool? useMustache,
     this.mustacheValues,
     required this.filename,
+    this.contentMarkdown,
     this.tapHandler,
     this.styleSheet,
     this.imageDirectory,
@@ -372,6 +385,9 @@ class MarkdownPage extends StatefulWidget {
 
   /// The markdown asset file to load
   final String filename;
+
+  /// Content of the markdown file
+  final String? contentMarkdown;
 
   /// The screen title
   final Widget? title;
@@ -471,6 +487,7 @@ class MarkdownPageState extends State<MarkdownPage> {
           child: SafeArea(
             child: MarkdownTemplate(
               filename: widget.filename,
+              contentMarkdown: widget.contentMarkdown,
               applicationName: name,
               mustacheValues: widget.mustacheValues,
               useMustache: widget.useMustache,

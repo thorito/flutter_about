@@ -37,6 +37,7 @@ class MarkdownPageListTile extends StatelessWidget {
     this.applicationIcon,
     this.useMustache,
     required this.filename,
+    this.contentMarkdown,
     this.mustacheValues,
     this.tapHandler,
     this.styleSheet,
@@ -85,6 +86,9 @@ class MarkdownPageListTile extends StatelessWidget {
 
   /// The markdown asset file to load
   final String filename;
+
+  /// Content of the markdown file
+  final String? contentMarkdown;
 
   /// Whether to replace {{ }} strings with [mustacheValues]
   final bool? useMustache;
@@ -177,6 +181,7 @@ class MarkdownPageListTile extends StatelessWidget {
           context: context,
           applicationName: applicationName,
           filename: filename,
+          contentMarkdown: contentMarkdown,
           title: title,
           scaffoldBuilder: scaffoldBuilder,
           useMustache: useMustache,
