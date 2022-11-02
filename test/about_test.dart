@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import 'package:about_custom/about.dart';
+import 'package:about_custom/about_custom.dart';
 import 'package:about_custom/src/license_detail.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';

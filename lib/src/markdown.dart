@@ -17,7 +17,7 @@
 import 'dart:async';
 import 'dart:core';
 
-import 'package:about_custom/about.dart';
+import 'package:about_custom/about_custom.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
