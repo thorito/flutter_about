@@ -1,4 +1,4 @@
-# About
+# About Custom
 
 Displays an About dialog, which describes the application.
 
@@ -8,11 +8,11 @@ Displays an About dialog, which describes the application.
 
 ## Usage
 
-To use this plugin, add `about` as a [dependency in your pubspec.yaml file](#-installing-tab-).
+To use this plugin, add `about_custom` as a [dependency in your pubspec.yaml file](#-installing-tab-).
 
 ## Example
 
-```dart
+```
   showAboutPage(
     context: context,
     values: {
