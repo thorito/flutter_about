@@ -26,8 +26,10 @@ const MethodChannel _channel = MethodChannel('plugins.flutter.io/package_info');
 
 void main() {
   setUpAll(() {
-    _channel.setMockMethodCallHandler((methodCall) async {
-      switch (methodCall.method) {
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+      .setMockMethodCallHandler(_channel, (message) async {
+
+      switch (message.method) {
         case 'getAll':
           return {
             'appName': 'About Example',
@@ -38,16 +40,18 @@ void main() {
         default:
           return null;
       }
+
     });
   });
 
   tearDownAll(() {
-    _channel.setMockMethodCallHandler(null);
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(_channel, (message) async => null);
   });
 
   group('AboutPage', () {
     Widget widget(ScaffoldBuilder? scaffoldBuilder) => AboutPage(
-          applicationLegalese: 'Copyright © David PHAM-VAN, {{ year }}',
+          applicationLegalese: 'Copyright © Thorito, {{ year }}',
           applicationDescription: const Text(
             'Displays an About dialog, which describes the application.',
           ),
