@@ -19,7 +19,7 @@ To use this plugin, add `about_custom` as a [dependency in your pubspec.yaml fil
       'version': '1.0',
       'year': DateTime.now().year.toString(),
     },
-    applicationLegalese: 'Copyright © David PHAM-VAN, {{ year }}',
+    applicationLegalese: 'Copyright © Thorito, {{ year }}',
     applicationDescription: const Text(
         'Displays an About dialog, which describes the application.'),
     children: const <Widget>[
