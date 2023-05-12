@@ -1,6 +1,4 @@
-// ignore_for_file: public_member_api_docs
-
-import 'package:about_custom/about_custom.dart';
+import 'package:about/about.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

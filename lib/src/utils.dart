@@ -37,11 +37,13 @@ bool isCupertino(BuildContext context) {
 }
 
 ThemeData themeFromCupertino(CupertinoThemeData theme) {
-  return ThemeData(
+  final currentTheme = ThemeData();
+  return currentTheme.copyWith(
     brightness: theme.brightness,
     canvasColor: theme.barBackgroundColor,
     primaryColor: theme.primaryColor,
-    // ignore: deprecated_member_use
-    accentColor: theme.primaryContrastingColor,
+    colorScheme: currentTheme.colorScheme.copyWith(
+        secondary: theme.primaryContrastingColor,
+    ),
   );
 }

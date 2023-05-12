@@ -3,14 +3,14 @@
 // ignore_for_file: public_member_api_docs, constant_identifier_names, avoid_classes_with_only_static_members
 
 class Pubspec {
-  static final buildDate = DateTime.utc(2021, 10, 21, 18, 2, 50);
+  static final buildDate = DateTime.utc(2023, 5, 12, 9, 0, 0);
 
   static const name = 'example';
 
   static const description =
       'Displays an About dialog, which describes the application, can show licenses, changelog, and other information.\n';
 
-  static const versionFull = '1.0.0+3';
+  static const versionFull = '1.0.0';
 
   static const version = '1.0.0';
 
@@ -20,18 +20,18 @@ class Pubspec {
 
   static const versionMinor = 0;
 
-  static const versionPatch = 0;
+  static const versionPatch = 1;
 
   static const versionBuild = 3;
 
-  static const String? versionPreRelease = '';
+  static const String versionPreRelease = '';
 
   static const versionIsPreRelease = false;
 
   static const homepage = 'https://github.com/DavBfr/flutter_about';
 
   static const environment = <dynamic, dynamic>{
-    'sdk': '>=2.1.0 <3.0.0',
+    'sdk': '>=2.1.0 <=3.0.0',
   };
 
   static const dependencies = <dynamic, dynamic>{
@@ -72,14 +72,14 @@ class Pubspec {
   };
 
   static const authors = <String>[
-    'David PHAM-VAN <dev.nfet.net@gmail.com>',
+    'Thorito <thorito@gmail.com>',
   ];
 
   static const authorsName = <String>[
-    'David PHAM-VAN',
+    'Thorito',
   ];
 
   static const authorsEmail = <String>[
-    'dev.nfet.net@gmail.com',
+    'thorito@gmail.com',
   ];
 }
